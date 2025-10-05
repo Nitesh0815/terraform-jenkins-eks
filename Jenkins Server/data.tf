@@ -4,7 +4,7 @@ data "aws_ami" "example" {
 
   filter {
     name   = "name"
-    values = ["amzn2-ami-hvm-*-x86_64-gp2"]
+    values = ["amzn2-ami-kernel-*-hvm-*-x86_64-gp2"]
   }
 
   filter {
@@ -18,7 +18,4 @@ data "aws_ami" "example" {
   }
 }
 
-data "aws_availability_zones" "azs" {
-  # Filters out zones that are not available (e.g., restricted)
-  state = "available" 
-}
+data "aws_availability_zones" "azs" {}
